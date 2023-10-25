@@ -22,7 +22,7 @@ optional arguments:
 git clone https://github.com/Whomrx666/vuln-sql.git
 cd vuln-sql
 pip install -r requirements.txt
-python vuln-sql.py
+python vuln-sql.py -{optional arguments}
 ```
 
 ### Don't write over existing log file 
