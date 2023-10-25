@@ -1,5 +1,5 @@
-# Date: 12/28/2018
-# Author: Mohamed
+# Date: 25/10/2023
+# Author: Mr.X
 # Description: Browser
 
 import requests
