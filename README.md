@@ -2,7 +2,7 @@
 
 A tool that uses public proxies to find and scan sites for sql injection vulnerability<br>
 
-__Usage:__ `python main.py -d product.php?id=`
+__Usage:__ `python vuln-sql.py -d product.php?id=`
 
 ### Requirements
 - Python *v.2.x* **|** *v.3.x*
@@ -26,10 +26,10 @@ python vuln-sql.py
 ```
 
 ### Don't write over existing log file 
-`python main.py -d product.php?id=`
+`python vuln-sql.py -d product.php?id=`
 
 ### Writing over existing log file 
-`python main.py -d product.php?id= -w`
+`python vuln-sql.py -d product.php?id= -w`
 
 ### More dork sql
 [Download here](https://www.mediafire.com/file/rfdrbmvqm5wknbv/dork_sql.txt/file)
