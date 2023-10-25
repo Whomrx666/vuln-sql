@@ -18,9 +18,7 @@ optional arguments:
 ```
 
 ### How to Install 
-
 ```
-
 git clone https://github.com/Whomrx666/vuln-sql.git
 cd vuln-sql
 pip install -r requirements.txt
