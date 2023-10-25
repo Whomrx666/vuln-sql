@@ -35,7 +35,7 @@ python vuln-sql.py
 [Download here](https://www.mediafire.com/file/rfdrbmvqm5wknbv/dork_sql.txt/file)
 
 ### Screenshot
-<img src="screenshot/vuln-sql.PNG" atl=""/>
+<img src="screenshot/vuln-sql.png" atl=""/>
 
 ### Original Author
 <a href="https://github.com/Whomrx666"><img src="https://img.shields.io/badge/Original-Author-brightgreen.svg" alt=""/></a>
