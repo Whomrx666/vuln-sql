@@ -25,13 +25,13 @@ git clone https://github.com/Whomrx666/vuln-sql.git
 cd vuln-sql
 pip install -r requirements.txt
 python vuln-sql.py
+```
 
 ### Don't write over existing log file 
 `python main.py -d product.php?id=`
 
 ### Writing over existing log file 
 `python main.py -d product.php?id= -w`
-```
 
 ### More dork sql
 [Download here](https://www.mediafire.com/file/rfdrbmvqm5wknbv/dork_sql.txt/file)
