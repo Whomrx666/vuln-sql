@@ -9,7 +9,7 @@ __Usage:__ `python vuln-sql.py -d product.php?id=`
 
 ### Help
 ```
-usage: main.py [-h] -d DORK [-w]
+usage: vuln-sql.py [-h] -d DORK [-w]
 
 optional arguments:
   -h, --help            show this help message and exit
