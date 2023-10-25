@@ -18,7 +18,10 @@ optional arguments:
 ```
 
 ### Install 
+`git clone https://github.com/Whomrx666/vuln-sql.git`
+`cd vuln-sql`
 `pip install -r requirements.txt`
+`python vuln-sql.py`
 
 ### Don't write over existing log file 
 `python main.py -d product.php?id=`
