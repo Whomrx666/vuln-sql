@@ -2,6 +2,9 @@
 
 A tool that uses public proxies to find and scan sites for sql injection vulnerability<br>
 
+### Warning
+Use it on Linux or Cloudshell Terminal or something similar that is linux based
+
 __Usage:__ `python vuln-sql.py -d product.php?id=`
 
 ### Requirements
