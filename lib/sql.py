@@ -31,17 +31,12 @@ class SQL(object):
 
         Thread(target=self.search.start, daemon=True).start()
 
-        while self.is_alive:
-
-            if not self.search.is_active():
-                break
+        while self.is_alive and self.search.is_active():
+            if link := self.search.get_link():
+                with self.lock:
+                    self.links.append(link)
             else:
-                link = self.search.get_link()
-                if link:
-                    with self.lock:
-                        self.links.append(link)
-                else:
-                    sleep(0.5)
+                sleep(0.5)
 
         if self.is_alive:
             self.is_alive = False
@@ -61,7 +56,10 @@ class SQL(object):
             browsers = []
             for link in self.links:
 
-                if not link in self.active_links and len(self.active_links) < max_active_browsers:
+                if (
+                    link not in self.active_links
+                    and len(self.active_links) < max_active_browsers
+                ):
                     self.active_links.append(link)
                     browser = Browser(link)
                     browsers.append(browser)
@@ -106,16 +104,15 @@ class SQL(object):
                         self.active_links.remove(browser.link)
                         self.browsers.remove(browser)
 
-                if browser.start_time:
-                    if time() - browser.start_time >= max_time_to_wait:
-                        browser.is_active = False
+                if browser.start_time and time() - browser.start_time >= max_time_to_wait:
+                    browser.is_active = False
 
     def start(self):
         try:
             self.log.setup()
         except KeyboardInterrupt:
             self.stop()
-        except:
+        except Exception:
             pass
 
         if not self.is_alive:
