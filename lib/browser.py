@@ -2,9 +2,10 @@
 # Author: Mr.X
 # Description: Browser
 
-import requests
+import contextlib
 from time import time
-from requests import Session
+
+import requests
 
 
 class Browser(object):
@@ -17,16 +18,12 @@ class Browser(object):
         self.is_attempted = False
 
     def get_content(self):
-        try:
-            return requests.get(self.link + '*').text.lower()
-        except:
-            pass
+        with contextlib.suppress(Exception):
+            return requests.get(f'{self.link}*').text.lower()
 
     def attempt(self):
         self.start_time = time()
-        content = self.get_content()
-
-        if content:
+        if content := self.get_content():
             self.is_attempted = True
 
             if 'sql' in content and 'error' in content and 'at line' in content:
